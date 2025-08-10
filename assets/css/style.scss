@@ -1,0 +1,183 @@
+/*
+    reference: https://www.figma.com/proto/3PiokoJj9IhGDnNiWAJbz7/DIO---Desafio-01?node-id=2-6&p=f&t=cmu6K0sYWEvolqmm-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1
+    sass --watch --style=compressed ./style.scss:./style.css
+*/
+:root {
+    /* space */
+    --gap: 1rem;
+    /* radius */
+    --border-radius: 5px;
+    /* colors */
+    --white: #fff;
+    --black: #000;
+    --blue: #1473b7;
+    --blue--light: #32a8dd;
+    --blue--dark: #09202a;
+    --yellow: #e5e044;
+}
+/* small reset */
+html {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    /* // css debug */
+    // background-color: rgba(60, 179, 113,.15);
+}
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-family: sans-serif;
+}
+ol, ul {
+    list-style: none;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+/* layout */
+header.banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid var(--blue--light);
+
+    background-image: url(../images/banner.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: var(--blue--dark);
+
+    .banner-content {
+        padding: calc(var(--gap) * 3);
+        text-align: center;
+
+        h1 {
+            font-size: 3rem;
+            color: var(--blue);            
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        p {
+            max-width: 50%;
+            margin: 0 auto;
+            color: white;
+            font-size: 1.4rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        button {
+            background-color: transparent;
+            border: 2px solid var(--blue);
+            color: var(--blue);
+            margin: 1rem 0;
+            padding: 1rem 3rem;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            font-variant: small-caps;
+        }
+    }
+}
+
+main {
+    width: 100%;
+    color: var(--white);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    text-align: center;
+
+    background-color: var(--black);
+
+    section {
+        width: inherit;
+        padding: calc(var(--gap) * 5);
+        border-bottom: 1px solid var(--blue--light) !important;
+
+        h2 {
+            font-size: 2rem;
+            text-transform: uppercase;
+            color: var(--blue--light);
+            font-weight: 600;
+        }
+
+        p {
+            line-height: 1.5;
+        }
+    }
+    #course-content {
+        p {
+            margin: var(--gap) auto;
+            max-width: 50%;
+        }
+        .modules-list {
+            max-width: 50%;
+            margin: calc(var(--gap) * 3) auto;
+            .module {
+                padding: var(--gap);
+                border-radius: 35px;
+                border: 1px solid var(--blue--light);
+                margin-bottom: var(--gap);
+                background-color: #333;
+                box-shadow: inset 5px 5px 8px #000;
+                span {
+                    color: var(--blue--light);
+                }
+            }
+        }
+    }
+
+    #transform-world {
+        padding: calc(var(--gap) * 3) 0;
+        aspect-ratio: 3/1;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        background-image: url('../images/woman-code.png');
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center center;
+        background-repeat: no-repeat;
+
+        p {
+            font-size: 3rem !important;
+            font-weight: 900;
+            text-align: left;
+            text-shadow: 3px 3px 0 var(--blue--light)  !important;
+            width: 30%;
+            margin: 0 10%;
+            font-size: 1.5rem;
+        }
+    }
+}
+
+footer {
+    display: grid;
+    place-items: center;
+    padding: calc(var(--gap) * 5);
+    background: linear-gradient(to bottom, var(--black) 0, var(--blue--dark) 80%);
+
+    p {
+        color: var(--white);
+        a {
+            text-decoration: none;
+            color: var(--blue--light);
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
